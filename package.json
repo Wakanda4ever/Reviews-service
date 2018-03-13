@@ -1,0 +1,61 @@
+{
+  "name": "Chompy-Reviews-Service",
+  "version": "1.0.0",
+  "description": "The Reviews Module for Chompy",
+  "author": "Mike Guin",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "start": "webpack -d && node server/index.js",
+    "dev-start": "nodemon server/index.js",
+    "dev": "webpack -d --watch"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestSetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "bluebird": "^3.5.1",
+    "cheerio": "^1.0.0-rc.2",
+    "css-loader": "^0.28.10",
+    "enzyme-to-json": "^3.3.1",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "mysql": "^2.15.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-devtools": "^3.4.1",
+    "redux-saga": "^0.16.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "style-loader": "^0.20.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-jest": "^22.4.1",
+    "babel-plugin-react-transform": "^3.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-syntax-class-properties": "^6.13.0",
+    "babel-plugin-syntax-decorators": "^6.13.0",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "react-test-renderer": "^16.2.0",
+    "enzyme": "^3.3.0",
+    "jest": "^22.4.2",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "webpack": "^3.11.0"
+  }
+}
