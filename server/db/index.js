@@ -1,15 +1,16 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "chompy-test-database.cr8yw4uwndba.us-west-1.rds.amazonaws.com",
-  user: "root",
-  database: "chompyremote",
-  password: "chompydatabase"
+  host: "ec2-user@ec2-54-175-103-213.compute-1.amazonaws.com",
+  user: "host",
+  database: "yelpdataset",
+  password: "developer"
 });
+
 // var con = mysql.createConnection({
 //   host: 'localhost',
 //   user: 'root',
-//   database: 'chompy'
+//   database: 'yelp_db'
 // });
 
 con.connect(function(err) {
