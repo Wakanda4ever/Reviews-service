@@ -1,4 +1,4 @@
-var db = require('../db');
+var db = require('./db');
 var Promise = require('bluebird');
 var fs = require('fs');
 
@@ -16,7 +16,7 @@ var doubleDataSet = function() {
          if (j === res.length - 1) {
             j = 0;
          }
-         var sql = 'INSERT INTO REVIEW (id, business_id, user_id, stars, date, text, useful, funny, cool) values(' + i + ',' + res.[i].business_id + ',' + res.[i].user_id + ',' + res.[i].stars + ',' + res.[i].date + ',' + res.[i].text + ',' + res.[i].useful + ',' + res.[i].funny + ',' + res.[i].cool + ')';
+         var sql = 'INSERT INTO REVIEW (id, business_id, user_id, stars, date, text, useful, funny, cool) values(' + i + ',' + res[i].business_id + ',' + res[i].user_id + ',' + res[i].stars + ',' + res[i].date + ',' + res[i].text + ',' + res[i].useful + ',' + res[i].funny + ',' + res[i].cool + ')';
          db.query(sql, (err, result) => {
            if (err) {
             console.error('Error writing data', err);
