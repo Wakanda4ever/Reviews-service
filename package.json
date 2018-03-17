@@ -38,6 +38,7 @@
     "redux-saga": "^0.16.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
+    "sequelize": "^4.37.1",
     "style-loader": "^0.20.2"
   },
   "devDependencies": {
