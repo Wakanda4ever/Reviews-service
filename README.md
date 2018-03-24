@@ -5,8 +5,9 @@ Yelp Clone - Reviews Service
 
 Then open a mongodb tab to the db IP
 ```
-$ mongo --host 127.0.0.1:27017
-$ git clone https://github.com/Wakanda4ever/Reviews-service.git
+$ mongod --dbpath=/var/lib/mongodb/data # in new tab
+$ mongo --host 127.0.0.1:27017 #in new tab
+$ git clone https://github.com/Wakanda4ever/Reviews-service.git # in new tab
 $ cd Reviews-service
 $ npm install && npm start
 $ npm test #runs enzyme, jest tests from terminal

@@ -13,7 +13,7 @@ var auth = sequelizeYelp
 var insertBatch = function(limit) {
   limit--;
   if (limit >= 0) {
-    sequelizeYelp.query(`INSERT INTO business (id, name, neighborhood, address, city, state, postal_code, latitude, longitude, stars, review_count, is_open) select id, name, neighborhood, address, city, state, postal_code, latitude, longitude, stars, review_count, is_open FROM business;
+    sequelizeYelp.query(`INSERT INTO review (id, business_id, user_id, stars, date, text, useful, funny, cool) select id, business_id, user_id, stars, date, text, useful, funny, cool FROM review;
    `)
     .catch(err => {
       console.error('Error doubling data');
@@ -26,13 +26,13 @@ var insertBatch = function(limit) {
 };
 
 var startTime = Date.now()
-Promise.all([auth]).then(() => insertBatch(10));
+Promise.all([auth]).then(() => insertBatch(5));
 
 // ID int NOT NULL AUTO_INCREMENT
 
 // ALTER TABLE table_name ADD column_name datatype;
 
-// alter table review add keys int not NULL AUTO_INCREMENT;
+// alter table review add keyId int not NULL AUTO_INCREMENT;
 
 
 // ALTER TABLE vendors ADD COLUMN vendor_group INT NOT NULL;
@@ -77,3 +77,8 @@ Promise.all([auth]).then(() => insertBatch(10));
 // FROM table
 
 // select * into OUTFILE 'review.csv' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' FROM review;
+
+//select * into OUTFILE '/run/media/wyatt/WF/review.csv' FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\n' FROM business;
+// mongoimport --host=127.0.0.1 -d yelp_db -c business --type csv --fieldFile /run/media/wyatt/WF/biz.csv
+
+// mongoimport --host=127.0.0.1 -d yelp_db -c review --type csv --fileldFile /run/media/wyatt/WF/review.csv
